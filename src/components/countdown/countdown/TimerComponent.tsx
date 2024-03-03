@@ -45,7 +45,6 @@ const TimerComponent: React.FC<TimerComponentProps> = ({ countDownDate }) => {
       setSeconds(newSeconds);
 
       if (difference <= 0) {
-        clearInterval(updateTime);
         setDays(0);
         setHours(0);
         setMinutes(0);

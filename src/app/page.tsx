@@ -5,7 +5,7 @@ import TimerComponent from "@/components/countdown/countdown/TimerComponent";
 const Home = () => {
   const [countdownDate, setCountdownDate] = useState<Date | null>(null);
   const [problemsList, setProblemsList] = useState<string>("TBA");
-  const [hwNum, setHwNum] = useState<number>(4);
+  const [hwNum, setHwNum] = useState<number>(7);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -76,7 +76,7 @@ const Home = () => {
           id="countdownDate"
           name="countdownDate"
           className="p-2 border border-gray-300 rounded-md mb-4"
-          value={countdownDate ? countdownDate.toISOString().slice(0, -8) : ""}
+          value={countdownDate ? countdownDate.toLocaleTimeString().slice(0, -8) : ""}
           onChange={(event) => setCountdownDate(new Date(event.target.value))}
         />
         <label htmlFor="problemsList" className="text-lg font-semibold mb-2">
